@@ -1,8 +1,8 @@
-const onPageLoad = () => {
-  const contentElem = document.getElementById('content');
-  contentElem.setAttribute('class' , 'content');
+const onPageLoad = (mainContentElement) => {
+  mainContentElement.setAttribute('class' , 'content');
 
   const tempContainer = document.createDocumentFragment();
+
   const restaurantName = tempContainer.appendChild(document.createElement('h1'));
   restaurantName.appendChild(document.createTextNode('G`Food Garage'));
 
@@ -11,7 +11,7 @@ const onPageLoad = () => {
   navigation.setAttribute('class', 'menu-bar');
   createNavBarLinks(navigation);
 
-  contentElem.appendChild(tempContainer);
+  mainContentElement.appendChild(tempContainer);
 };
 
 function createNavBarLinks(parentElement) {
@@ -19,6 +19,7 @@ function createNavBarLinks(parentElement) {
   for (let index = 0; index < navBarLinks.length; index++) {
     const menu = document.createElement('li');
     menu.setAttribute('class' , 'menu-item');
+    menu.setAttribute('id' , `menu-item${index + 1}`);
     menu.appendChild(document.createTextNode(navBarLinks[index]));
     parentElement.appendChild(menu);
   }
