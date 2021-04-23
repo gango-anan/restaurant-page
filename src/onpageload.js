@@ -7,16 +7,19 @@ const onPageLoad = () => {
   const navigation = tempContainer.appendChild(document.createElement('ul'));
   navigation.setAttribute('id', 'menu-bar');
   navigation.setAttribute('class', 'menu-bar');
+  createNavBarLinks(navigation);
 
+  contentElem.appendChild(tempContainer);
+};
+
+function createNavBarLinks(parentElement) {
   const navBarLinks = ['About Us', 'Menu', 'Contact'];
   for (let index = 0; index < navBarLinks.length; index++) {
     const menu = document.createElement('li');
     menu.setAttribute('class' , 'menu-item');
     menu.appendChild(document.createTextNode(navBarLinks[index]));
-    navigation.appendChild(menu);
+    parentElement.appendChild(menu);
   }
-
-  contentElem.appendChild(tempContainer);
-};
+}
 
 export { onPageLoad }
