@@ -1,2 +1,3 @@
 import { onPageLoad } from './onpageload'
-window.onload = onPageLoad();
+const mainContentElement = document.getElementById('content');
+window.onload = onPageLoad(mainContentElement);
