@@ -1,2 +1,2 @@
-console.log("Gango");
-console.log("Galiwango");
+import { onPageLoad } from './onpageload'
+window.onload = onPageLoad();
