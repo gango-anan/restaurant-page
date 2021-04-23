@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/aboutus.js":
+/*!************************!*\
+  !*** ./src/aboutus.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createAboutUsContent\": () => (/* binding */ createAboutUsContent)\n/* harmony export */ });\nconst createAboutUsContent = (mainContentElement) => {\r\n  const tempAboutUs = document.createDocumentFragment();\r\n\r\n  const aboutUsDiv = document.createElement('div');\r\n  tempAboutUs.appendChild(aboutUsDiv);\r\n  aboutUsDiv.setAttribute('class' , 'aboutus-content');\r\n\r\n  const slogan1 = aboutUsDiv.appendChild(document.createElement('p'));\r\n  slogan1.appendChild(document.createTextNode(\"'Eat Fresh, Stay Healthy and Productive.'\"));\r\n\r\n  const slogan2 = aboutUsDiv.appendChild(document.createElement('p'));\r\n  slogan2.appendChild(document.createTextNode(\"Life is too short for boring food.\"));\r\n\r\n  mainContentElement.appendChild(tempAboutUs);\r\n}\r\n\r\n\n\n//# sourceURL=webpack://restaurant-page/./src/aboutus.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _onpageload__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./onpageload */ \"./src/onpageload.js\");\n\r\nconst mainContentElement = document.getElementById('content');\r\nwindow.onload = (0,_onpageload__WEBPACK_IMPORTED_MODULE_0__.onPageLoad)(mainContentElement);\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _onpageload__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./onpageload */ \"./src/onpageload.js\");\n/* harmony import */ var _aboutus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aboutus */ \"./src/aboutus.js\");\n\r\n\r\n\r\nconst mainContentElement = document.getElementById('content');\r\nwindow.onload = (0,_onpageload__WEBPACK_IMPORTED_MODULE_0__.onPageLoad)(mainContentElement);\r\n\r\n// Utility functions.\r\nfunction wipeExistingContents(parentContainer) {\r\n  parentContainer.removeChild(parentContainer.lastChild);\r\n}\r\n\r\n// Event Listeners.\r\nmainContentElement.addEventListener('click', (e) => {\r\n  if (e.target && e.target.matches('li#menu-item1')) {\r\n    (0,_aboutus__WEBPACK_IMPORTED_MODULE_1__.createAboutUsContent)(mainContentElement);\r\n  }\r\n  else if (e.target && e.target.matches('li#menu-item2')) {\r\n    createMenuContent(mainContentElement);\r\n  }\r\n  else if (e.target && e.target.matches('li#menu-item3')) {\r\n    createContactContent(mainContentElement);\r\n  }\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _onp
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"onPageLoad\": () => (/* binding */ onPageLoad)\n/* harmony export */ });\nconst onPageLoad = (mainContentElement) => {\r\n  mainContentElement.setAttribute('class' , 'content');\r\n\r\n  const tempContainer = document.createDocumentFragment();\r\n\r\n  const restaurantName = tempContainer.appendChild(document.createElement('h1'));\r\n  restaurantName.appendChild(document.createTextNode('G`Food Garage'));\r\n\r\n  const navigation = tempContainer.appendChild(document.createElement('ul'));\r\n  navigation.setAttribute('id', 'menu-bar');\r\n  navigation.setAttribute('class', 'menu-bar');\r\n  createNavBarLinks(navigation);\r\n\r\n  mainContentElement.appendChild(tempContainer);\r\n};\r\n\r\nfunction createNavBarLinks(parentElement) {\r\n  const navBarLinks = ['About Us', 'Menu', 'Contact'];\r\n  for (let index = 0; index < navBarLinks.length; index++) {\r\n    const menu = document.createElement('li');\r\n    menu.setAttribute('class' , 'menu-item');\r\n    menu.appendChild(document.createTextNode(navBarLinks[index]));\r\n    parentElement.appendChild(menu);\r\n  }\r\n}\r\n\r\n\n\n//# sourceURL=webpack://restaurant-page/./src/onpageload.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"onPageLoad\": () => (/* binding */ onPageLoad)\n/* harmony export */ });\nconst onPageLoad = (mainContentElement) => {\r\n  mainContentElement.setAttribute('class' , 'content');\r\n\r\n  const tempContainer = document.createDocumentFragment();\r\n\r\n  const restaurantName = tempContainer.appendChild(document.createElement('h1'));\r\n  restaurantName.appendChild(document.createTextNode('G`Food Garage'));\r\n\r\n  const navigation = tempContainer.appendChild(document.createElement('ul'));\r\n  navigation.setAttribute('id', 'menu-bar');\r\n  navigation.setAttribute('class', 'menu-bar');\r\n  createNavBarLinks(navigation);\r\n\r\n  mainContentElement.appendChild(tempContainer);\r\n};\r\n\r\nfunction createNavBarLinks(parentElement) {\r\n  const navBarLinks = ['About Us', 'Menu', 'Contact'];\r\n  for (let index = 0; index < navBarLinks.length; index++) {\r\n    const menu = document.createElement('li');\r\n    menu.setAttribute('class' , 'menu-item');\r\n    menu.setAttribute('id' , `menu-item${index + 1}`);\r\n    menu.appendChild(document.createTextNode(navBarLinks[index]));\r\n    parentElement.appendChild(menu);\r\n  }\r\n}\r\n\r\n\n\n//# sourceURL=webpack://restaurant-page/./src/onpageload.js?");
 
 /***/ })
 
