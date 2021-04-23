@@ -3,7 +3,7 @@ const createAboutUsContent = (mainContentElement) => {
 
   const aboutUsDiv = document.createElement('div');
   tempAboutUs.appendChild(aboutUsDiv);
-  aboutUsDiv.setAttribute('class' , 'aboutus-content');
+  aboutUsDiv.setAttribute('class' , 'aboutus-contact');
 
   const slogan1 = aboutUsDiv.appendChild(document.createElement('p'));
   slogan1.appendChild(document.createTextNode("'Eat Fresh, Stay Healthy and Productive.'"));

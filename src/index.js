@@ -1,5 +1,6 @@
 import { onPageLoad } from './onpageload'
 import { createAboutUsContent } from './aboutus'
+import { createContactContent } from './contact.js'
 
 const mainContentElement = document.getElementById('content');
 window.onload = onPageLoad(mainContentElement);
