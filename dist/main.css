@@ -37,14 +37,19 @@ h1 {
   border-bottom: 1px solid #fff;
 }
 
+.menu-item.about-bg {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .menu-item:hover {
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.aboutus-content {
+.aboutus-contact {
   font-size: 1.2rem;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +58,6 @@ h1 {
   width: 60vw;
   margin: auto;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
