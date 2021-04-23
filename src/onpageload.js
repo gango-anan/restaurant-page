@@ -1,5 +1,7 @@
 const onPageLoad = () => {
   const contentElem = document.getElementById('content');
+  contentElem.setAttribute('class' , 'content');
+
   const tempContainer = document.createDocumentFragment();
   const restaurantName = tempContainer.appendChild(document.createElement('h1'));
   restaurantName.appendChild(document.createTextNode('G`Food Garage'));
