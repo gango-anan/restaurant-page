@@ -4,9 +4,9 @@
   "description": "simple restaurant home page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --progress",
-    "watch": "webpack --progress --watch"
+    "dev": "webpack --mode=development",
+    "build": "webpack --progress --mode=production",
+    "watch": "webpack --progress --watch --mode=development"
   },
   "repository": {
     "type": "git",
