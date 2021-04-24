@@ -1,7 +1,18 @@
+function createNavBarLinks(parentElement) {
+  const navBarLinks = ['About', 'Menu', 'Contact'];
+  for (let index = 0; index < navBarLinks.length; index += 1) {
+    const menu = document.createElement('li');
+    menu.setAttribute('class', 'menu-item');
+    menu.setAttribute('id', `menu-item${index + 1}`);
+    menu.appendChild(document.createTextNode(navBarLinks[index]));
+    parentElement.appendChild(menu);
+  }
+}
+
 const onPageLoad = (mainContentElement) => {
   const body = document.querySelector('body');
-  body.setAttribute('class' , 'bg');
-  mainContentElement.setAttribute('class' , 'content');
+  body.setAttribute('class', 'bg');
+  mainContentElement.setAttribute('class', 'content');
 
   const tempContainer = document.createDocumentFragment();
 
@@ -16,15 +27,4 @@ const onPageLoad = (mainContentElement) => {
   mainContentElement.appendChild(tempContainer);
 };
 
-function createNavBarLinks(parentElement) {
-  const navBarLinks = ['About', 'Menu', 'Contact'];
-  for (let index = 0; index < navBarLinks.length; index++) {
-    const menu = document.createElement('li');
-    menu.setAttribute('class' , 'menu-item');
-    menu.setAttribute('id' , `menu-item${index + 1}`);
-    menu.appendChild(document.createTextNode(navBarLinks[index]));
-    parentElement.appendChild(menu);
-  }
-}
-
-export { onPageLoad }
+export { onPageLoad as default };

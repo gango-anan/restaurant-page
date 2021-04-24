@@ -3,7 +3,7 @@ const createContactContent = (mainContentElement) => {
 
   const contactDiv = document.createElement('div');
   tempContact.appendChild(contactDiv);
-  contactDiv.setAttribute('class' , 'aboutus-contact');
+  contactDiv.setAttribute('class', 'aboutus-contact');
 
   const contactUs = contactDiv.appendChild(document.createElement('h2'));
   contactUs.appendChild(document.createTextNode('CONTACT US'));
@@ -18,6 +18,6 @@ const createContactContent = (mainContentElement) => {
   tel.appendChild(document.createTextNode('Tel: +256 000-000-000'));
 
   mainContentElement.appendChild(tempContact);
-}
+};
 
-export { createContactContent }
+export { createContactContent as default };
