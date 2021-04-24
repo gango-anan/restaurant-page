@@ -19,6 +19,13 @@ function wipeExistingContents(parentContainer) {
   }
 }
 
+function activateTab(containerTag) {
+  for (let index = 0; index < containerTag.parentNode.childNodes.length; index += 1) {
+    containerTag.parentNode.childNodes[index].classList.remove('active');
+  }
+  containerTag.classList.add('active');
+}
+
 // Event Listeners.
 mainContentElement.addEventListener('click', (e) => {
   const body = document.querySelector('body');
@@ -26,16 +33,19 @@ mainContentElement.addEventListener('click', (e) => {
     wipeExistingContents(mainContentElement);
     body.classList.remove('bg-dark');
     body.classList.add('bg');
+    activateTab(e.target);
     createAboutUsContent(mainContentElement);
   } else if (e.target && e.target.matches('li#menu-item2')) {
     wipeExistingContents(mainContentElement);
     body.classList.remove('bg');
     body.classList.add('bg-dark');
+    activateTab(e.target);
     createMenuContent(mainContentElement);
   } else if (e.target && e.target.matches('li#menu-item3')) {
     wipeExistingContents(mainContentElement);
     body.classList.remove('bg-dark');
     body.classList.add('bg');
+    activateTab(e.target);
     createContactContent(mainContentElement);
   }
 });

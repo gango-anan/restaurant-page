@@ -1,3 +1,5 @@
+import createAboutUsContent from './aboutus';
+
 function createNavBarLinks(parentElement) {
   const navBarLinks = ['About', 'Menu', 'Contact'];
   for (let index = 0; index < navBarLinks.length; index += 1) {
@@ -25,6 +27,7 @@ const onPageLoad = (mainContentElement) => {
   createNavBarLinks(navigation);
 
   mainContentElement.appendChild(tempContainer);
+  createAboutUsContent(mainContentElement);
 };
 
 export { onPageLoad as default };
